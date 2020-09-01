@@ -5,7 +5,6 @@ from flask import Flask, jsonify, request
 from tensorflow.keras.models import load_model
 import json
 import pickle
-import sklearn
 
 NN_model = load_model('NN_model.h5')
 KNN_model = pickle.load(open('KNN_model.pkl','rb'))
