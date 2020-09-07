@@ -34,9 +34,10 @@ def predict():
     result = result_NN*result_scaling_factor[0]
     
     result_light_classification = Light_classification.predict(df_scaled)[0]
+
     
     result_dict = {
-        'SPM' : result.tolist(),
+        'SPM' : result[0].tolist(),
         'Light' : result_light_classification
         }
 
