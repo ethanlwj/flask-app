@@ -31,7 +31,7 @@ def predict():
     
     # predictions
     result_NN = NN_model_v2.predict(df_scaled)
-    result_scaling_factor = KNN_model_v2.predict(data_df)
+    result_scaling_factor = KNN_model.predict(data_df)
     
     result = result_NN*result_scaling_factor[0]
     
