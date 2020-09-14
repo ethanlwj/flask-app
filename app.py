@@ -9,7 +9,7 @@ import sklearn
 
 NN_model = load_model('NN_model.h5')
 KNN_model = pickle.load(open('KNN_model.pkl','rb'))
-NN_model_v2 = load_model('NN_model_v2.h5')
+NN_model_v2 = load_model('NN_model_v2.h5',compile=False)
 KNN_model_v2 = pickle.load(open('KNN_model_v2.pkl','rb'))
 Light_classification = pickle.load(open('Light_Classification.pkl','rb'))
 
