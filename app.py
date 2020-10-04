@@ -5,13 +5,13 @@ from flask import Flask, jsonify, request
 from tensorflow.keras.models import load_model
 import json
 import pickle
-import sklearn
 
-NN_model = load_model('NN_model.h5')
-KNN_model = pickle.load(open('KNN_model.pkl','rb'))
+# NN_model = load_model('NN_model.h5')
+# KNN_model = pickle.load(open('KNN_model.pkl','rb'))
 NN_model_v2 = load_model('NN_model_v2.h5',compile=False)
 KNN_model_v2 = pickle.load(open('KNN_model_v2.pkl','rb'))
-Light_classification = pickle.load(open('Light_Classification.pkl','rb'))
+# Light_classification = pickle.load(open('Light_Classification.pkl','rb'))
+Light_classification_v2 = pickle.load(open('Light_Classification_v2.pkl','rb'))
 
 # app
 app = Flask(__name__)
@@ -35,7 +35,7 @@ def predict():
     
     result = result_NN*result_scaling_factor[0]
     
-    result_light_classification = Light_classification.predict(df_scaled)[0]
+    result_light_classification = Light_classification_v2.predict(df_scaled)[0]
 
     
     result_dict = {
